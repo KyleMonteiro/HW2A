@@ -37,9 +37,11 @@ private:
 public:
 	void addRoom(int w, int l, string n) {
 		//cout << "I'm here 2" << endl;
-		rooms[roomCount]->setWidth(w);
-		rooms[roomCount]->setLength(l);
-		rooms[roomCount]->setName(n);
+		Room* rooms = new Room();
+		rooms.setWidth(w);
+		rooms.setLength(l);
+		rooms.setName(n);
+		rooms[roomCount] = rooms;
 		roomCount++;
 		cout << "Room Count is: " << roomCount << endl;
 	}
