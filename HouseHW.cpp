@@ -37,13 +37,13 @@ private:
 public:
 	void addRoom(int w, int l, string n) {
 		//cout << "I'm here 2" << endl;
-		Room* rooms = new Room();
-		rooms->setWidth(w);
-		rooms->setLength(l);
-		rooms->setName(n);
+		rooms[roomCount] = new Room();
+		rooms[roomCount]->setWidth(w);
+		rooms[roomCount]->setLength(l);
+		rooms[roomCount]->setName(n);
 		rooms[roomCount] = *rooms;
+		cout << rooms[roomCount]->getName() << endl;
 		roomCount++;
-		cout << "Room Count is: " << roomCount << endl;
 	}
 	void printRoomNames() {
 		for (int i = 0;i < roomCount;i++) {
@@ -63,12 +63,8 @@ public:
 int main() {
 
 	House* myHouse = new House();
-	string line;
 	ifstream RoomInfo;
 	RoomInfo.open("roomInfo.txt");
-	
-	getline(RoomInfo, line);
-	cout << line;
 
 	int w;
 	int l;
@@ -78,9 +74,7 @@ int main() {
 
 	while (RoomInfo) {
 		RoomInfo >> l >> n;
-		//cout << "Im Here 1" << endl;
 		myHouse->addRoom(w, l, n);
-		cout << "I'm here 3" << endl;
 		RoomInfo >> w;
 	}
 
