@@ -38,10 +38,10 @@ public:
 	void addRoom(int w, int l, string n) {
 		//cout << "I'm here 2" << endl;
 		Room* rooms = new Room();
-		rooms.setWidth(w);
-		rooms.setLength(l);
-		rooms.setName(n);
-		rooms[roomCount] = rooms;
+		rooms->setWidth(w);
+		rooms->setLength(l);
+		rooms->setName(n);
+		rooms[roomCount] = *rooms;
 		roomCount++;
 		cout << "Room Count is: " << roomCount << endl;
 	}
