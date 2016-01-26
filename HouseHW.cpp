@@ -12,19 +12,33 @@ private:
 	string name;
 public:
 	void setWidth(int w) {
-		cout << "in w" << endl;
+		//cout << "in w" << endl;
 		width = w;
-		cout << "about to leave w" << endl;
+		//cout << "about to leave w" << endl;
 	}
+
+	int getWidth() {
+		//cout << "in w" << endl;
+		return width;
+		//cout << "about to leave w" << endl;
+	}
+
 	void setLength(int l) {
 		length = l;
 	}
+
+	int getLength() {
+		return length;
+	}
+
 	void setName(string n) {
 		name = n;
 	}
+
 	string getName() {
 		return name;
 	}
+
 	int  getArea() {
 		return width*length;
 	}
@@ -35,6 +49,7 @@ private:
 	int roomCount = 0;
 	Room* rooms[10];
 public:
+
 	void addRoom(int w, int l, string n) {
 		//cout << "I'm here 2" << endl;
 		rooms[roomCount] = new Room();
@@ -42,15 +57,17 @@ public:
 		rooms[roomCount]->setLength(l);
 		rooms[roomCount]->setName(n);
 		rooms[roomCount] = *rooms;
-		cout << rooms[roomCount]->getName() << endl;
+		cout << rooms[roomCount]->getName() << " " << rooms[roomCount]->getWidth() << " " << rooms[roomCount]->getLength() << endl;
 		roomCount++;
 	}
+
 	void printRoomNames() {
 		for (int i = 0;i < roomCount;i++) {
 				cout << rooms[i]->getName() << " ";
 		}
 		cout << endl;
 	}
+
 	int calculateArea() {
 		int totalArea = 0;
 		for (int i = 0; i < roomCount; i++) {
