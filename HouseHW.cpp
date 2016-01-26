@@ -58,9 +58,12 @@ public:
 int main() {
 
 	House* myHouse = new House();
-
+	string line;
 	ifstream RoomInfo;
 	RoomInfo.open("roomInfo.txt");
+	
+	getline(RoomInfo, line);
+	cout << line;
 
 	int w;
 	int l;
@@ -77,4 +80,7 @@ int main() {
 	myHouse->printRoomNames();
 	cout << "the area of my house is " << myHouse->calculateArea()
 		<< " square feet" << endl;
+
+	cin.get();
+	return 0;
 }
