@@ -1,0 +1,5 @@
+20 40 livingRoom
+5 5 closet
+30 15 kitchen
+20 20 bedroom
+10 18 smallBedroom

@@ -7,26 +7,32 @@ using namespace std;
 
 class Room {
 private:
-	int width;
-	int length;
+	int width = 0;
+	int length = 0;
 	string name;
 public:
-	void setWidth(int w) {
-		width = w;
-	}
-	void setLength(int l) {
-		length = l;
-	}
-	void setName(string n) {
-		name = n;
-	}
-	string getName() {
-		return name;
-	}
-	int getArea() {
-		return width*length;
-	}
+	void setWidth(int w);
+	void setLength(int l);
+	void setName(string n);
+	string getName();
+	int getArea();
 };
+
+void room::setWidth(int w) {
+	width = w;
+}
+void room::setLength(int l) {
+	length = l;
+}
+void room::setName(string n) {
+	name = n;
+}
+string room::getName() {
+	return name;
+}
+int room::getArea() {
+	return width*length;
+}
 
 class House {
 private:
@@ -34,11 +40,12 @@ private:
 	Room* rooms[10];
 public:
 	void addRoom(int w, int l, string n) {
-			rooms[roomCount]->setWidth(w);
-			rooms[roomCount]->setLength(l);
-			rooms[roomCount]->setName(n);
-			roomCount++;
-			cout << "Room Count is: " << roomCount << endl;
+		cout << "I'm here 2" << endl;
+		rooms[roomCount]->setWidth(w);
+		rooms[roomCount]->setLength(l);
+		rooms[roomCount]->setName(n);
+		roomCount++;
+		cout << "Room Count is: " << roomCount << endl;
 	}
 	void printRoomNames() {
 		for (int i = 0;i < roomCount;i++) {
@@ -73,7 +80,9 @@ int main() {
 
 	while (RoomInfo) {
 		RoomInfo >> l >> n;
+		cout << "Im Here 1" << endl;
 		myHouse->addRoom(w, l, n);
+		cout << "I'm here 3" << endl;
 		RoomInfo >> w;
 	}
 

@@ -1,2 +1,12 @@
 ﻿  HouseHW.cpp
-  HW2A.vcxproj -> C:\Users\kyle\documents\visual studio 2015\Projects\HW2A\Debug\HW2A.exe
+c:\users\kyle\documents\visual studio 2015\projects\hw2a\househw.cpp(21): error C2653: 'room': is not a class or namespace name
+c:\users\kyle\documents\visual studio 2015\projects\hw2a\househw.cpp(22): error C2065: 'width': undeclared identifier
+c:\users\kyle\documents\visual studio 2015\projects\hw2a\househw.cpp(24): error C2653: 'room': is not a class or namespace name
+c:\users\kyle\documents\visual studio 2015\projects\hw2a\househw.cpp(25): error C2065: 'length': undeclared identifier
+c:\users\kyle\documents\visual studio 2015\projects\hw2a\househw.cpp(27): error C2653: 'room': is not a class or namespace name
+c:\users\kyle\documents\visual studio 2015\projects\hw2a\househw.cpp(28): error C2065: 'name': undeclared identifier
+c:\users\kyle\documents\visual studio 2015\projects\hw2a\househw.cpp(30): error C2653: 'room': is not a class or namespace name
+c:\users\kyle\documents\visual studio 2015\projects\hw2a\househw.cpp(31): error C2065: 'name': undeclared identifier
+c:\users\kyle\documents\visual studio 2015\projects\hw2a\househw.cpp(33): error C2653: 'room': is not a class or namespace name
+c:\users\kyle\documents\visual studio 2015\projects\hw2a\househw.cpp(34): error C2065: 'width': undeclared identifier
+c:\users\kyle\documents\visual studio 2015\projects\hw2a\househw.cpp(34): error C2065: 'length': undeclared identifier
