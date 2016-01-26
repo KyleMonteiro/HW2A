@@ -30,15 +30,11 @@ public:
 	}
 
 	void setWidth(int w) {
-		//cout << "in w" << endl;
 		width = w;
-		//cout << "about to leave w" << endl;
 	}
 
 	int getWidth() {
-		//cout << "in w" << endl;
 		return width;
-		//cout << "about to leave w" << endl;
 	}
 
 	void setLength(int l) {
@@ -72,7 +68,7 @@ public:
 	void addRoom(string roomline) {
 
 		rooms[roomCount] = new Room(roomline);
-		cout << rooms[roomCount]->getName() << " " << rooms[roomCount]->getWidth() << " " << rooms[roomCount]->getLength() << endl;
+		//cout << rooms[roomCount]->getName() << " " << rooms[roomCount]->getWidth() << " " << rooms[roomCount]->getLength() << endl;
 		roomCount++;
 
 	}
@@ -99,17 +95,10 @@ int main() {
 	ifstream RoomInfo;
 	RoomInfo.open("roomInfo.txt");
 
-	int RoomCount = 0;
-	int w;
-	int l;
 	string roomline;
 
-	RoomInfo >> w;
-
 	while (getline(RoomInfo, roomline)) {
-
 		myHouse->addRoom(roomline);
-
 	}
 
 	myHouse->printRoomNames();
