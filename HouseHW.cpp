@@ -7,10 +7,28 @@ using namespace std;
 
 class Room {
 private:
+
 	int width = 0;
 	int length = 0;
 	string name;
+
 public:
+
+	Room(string roomline) {
+
+		istringstream iss(roomline);
+
+		string temp_width;
+		getline(iss, temp_width, ' ');
+		width = stoi(temp_width);
+
+		string temp_length;
+		getline(iss, temp_length, ' ');
+		length = stoi(temp_length);
+		getline(iss, name, ' ');
+
+	}
+
 	void setWidth(int w) {
 		//cout << "in w" << endl;
 		width = w;
@@ -42,6 +60,7 @@ public:
 	int  getArea() {
 		return width*length;
 	}
+
 };
 
 class House {
@@ -50,15 +69,12 @@ private:
 	Room* rooms[10];
 public:
 
-	void addRoom(int w, int l, string n) {
-		//cout << "I'm here 2" << endl;
-		rooms[roomCount] = new Room();
-		rooms[roomCount]->setWidth(w);
-		rooms[roomCount]->setLength(l);
-		rooms[roomCount]->setName(n);
-		rooms[roomCount] = *rooms;
+	void addRoom(string roomline) {
+
+		rooms[roomCount] = new Room(roomline);
 		cout << rooms[roomCount]->getName() << " " << rooms[roomCount]->getWidth() << " " << rooms[roomCount]->getLength() << endl;
 		roomCount++;
+
 	}
 
 	void printRoomNames() {
@@ -83,16 +99,17 @@ int main() {
 	ifstream RoomInfo;
 	RoomInfo.open("roomInfo.txt");
 
+	int RoomCount = 0;
 	int w;
 	int l;
-	string n;
+	string roomline;
 
 	RoomInfo >> w;
 
-	while (RoomInfo) {
-		RoomInfo >> l >> n;
-		myHouse->addRoom(w, l, n);
-		RoomInfo >> w;
+	while (getline(RoomInfo, roomline)) {
+
+		myHouse->addRoom(roomline);
+
 	}
 
 	myHouse->printRoomNames();
